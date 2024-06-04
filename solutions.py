@@ -14,6 +14,13 @@ def is_sweltering():
       :returns: True if the temperature is over 90, False otherwise.
     """
     # write your code for this function below this line.
+    temp=float(input("What is the temperature in Fahrenheit? "))
+    if temp > 90:
+        return True
+    else:
+        return False
+    
+
 
 
 def is_warm():
@@ -25,6 +32,12 @@ def is_warm():
       :returns: True if the temperature is between 75 and 87, inclusive, False otherwise.
     """
     # write your code for this function below this line.
+    temp=float(input("What is the temperature in Fahrenheit? "))
+    if temp >= 75 or temp <= 87:
+        return True
+    else:
+        return False
+
 
 
 def is_humid():
@@ -36,6 +49,14 @@ def is_humid():
       :returns: True if it is humid today, False otherwise.
     """
     # write your code for this function below this line.
+    humid=input("Is it humid out today? ")
+    if humid.lower() == "yes":
+        return True
+    elif humid.lower() == "no":
+        return False
+    else:
+        print("Come on dude this is a yes or no question, don't complicate it..")
+
 
 
 def is_inclement():
@@ -47,6 +68,13 @@ def is_inclement():
       :returns: True if it is raining, snowing, or sleeting today, False otherwise.
     """
     # write your code for this function below this line.
+    weather = input("How is the weather out today? ")
+    if "rain" in weather.lower() or "snow" in weather.lower() or "sleet" in weather.lower():
+        return True
+    else:
+        return False
+    
+
 
 
 def is_typical_new_york_summer():
@@ -60,6 +88,10 @@ def is_typical_new_york_summer():
       :returns: True if the temperature is over 90 and it is humid, False otherwise.
     """
     # write your code for this function below this line.
+    if is_sweltering() is True and is_humid() is True:
+        return True
+    else:
+        return False
 
 
 def is_cool_and_nice():
@@ -72,3 +104,7 @@ def is_cool_and_nice():
       :returns: True if the weather is cool and nice today, False otherwise.
     """
     # write your code for this function below this line.
+    if bool(is_humid()) and bool(is_sweltering()) and bool(is_warm()) and bool(is_inclement()):
+        return False
+    else:
+        return True
